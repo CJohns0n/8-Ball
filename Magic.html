@@ -31,7 +31,7 @@
         }
         .pulse5 {
             display: flex;
-            animation: pulse 1.5s infinite;
+            animation: pulse 2.1s infinite;
             width: 550px;
             height: 550px;
             border-radius: 50%;
@@ -42,16 +42,25 @@
             0% {
                 background-color: violet;
             }
+            13% {
+                background-color: black;
+            }
             25% {
                 background-color: coral;
             }
-            45% {
+            37% {
+                background-color: black;
+            }
+            50% {
                 background-color: lime;
             }
-            65% {
+            63% {
+                background-color: black;
+            }
+            75% {
                 background-color: turquoise;
             }
-            85% {
+            87% {
                 background-color: black;
             }
             100% {
@@ -60,7 +69,7 @@
         }
         .pulse4 {
             display: flex;
-            animation: pulse 1.25s infinite;
+            animation: pulse 2s infinite;
             width: 500px;
             height: 500px;
             border-radius: 50%;
@@ -69,7 +78,7 @@
         }
         .pulse3 {
             display: flex;
-            animation: pulse 1s infinite;
+            animation: pulse 1.9s infinite;
             width: 450px;
             height: 450px;
             border-radius: 50%;
@@ -78,7 +87,7 @@
         }
         .pulse2 {
             display: flex;
-            animation: pulse .75s infinite;
+            animation: pulse 1.8s infinite;
             width: 400px;
             height: 400px;
             border-radius: 50%;
@@ -87,7 +96,7 @@
         }
         .pulse1 {
             display: flex;
-            animation: .5s infinite;
+            animation: pulse 1.7s infinite;
             width: 350px;
             height: 350px;
             border-radius: 50%;
@@ -96,8 +105,8 @@
         }
         
         .blackBall {
-            width: 330px;
-            height: 330px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             background-color: black;
             text-align: center;
@@ -205,8 +214,6 @@
         
         $("#answer").html(eightBall)
     }
-    
-    
     </script>
 </body>
 </html>
