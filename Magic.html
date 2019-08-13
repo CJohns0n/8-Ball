@@ -1,0 +1,212 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Magic 8 Ball</title>
+  <meta name="description" content="The 8 Ball">
+  <meta name="author" content="Havoc and Lockness">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <style type="text/css">
+        .button {
+            width: 75px;
+            text-align: center;
+            margin: auto;
+            border: 1px solid grey;
+            margin-bottom: 20px;
+            margin-top: 20px;  
+        }
+        .question {
+            width: 400px;
+           resize: none;
+            padding: 10;
+            text-align: left;
+        }
+        .highlighted {
+            background-color: chartreuse;
+        }
+        .body {
+            text-align: center;
+            background-color: black;
+        }
+        .pulse5 {
+            display: flex;
+            animation: pulse 1.5s infinite;
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes pulse {
+            0% {
+                background-color: violet;
+            }
+            25% {
+                background-color: coral;
+            }
+            45% {
+                background-color: lime;
+            }
+            65% {
+                background-color: turquoise;
+            }
+            85% {
+                background-color: black;
+            }
+            100% {
+                background-color: violet;
+            }
+        }
+        .pulse4 {
+            display: flex;
+            animation: pulse 1.25s infinite;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        .pulse3 {
+            display: flex;
+            animation: pulse 1s infinite;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        .pulse2 {
+            display: flex;
+            animation: pulse .75s infinite;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        .pulse1 {
+            display: flex;
+            animation: .5s infinite;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .blackBall {
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            background-color: black;
+            text-align: center;
+        }
+        .text {
+            color: oldlace;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .answerZone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .answerText {
+            color: lime;
+            font-size: 250%;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body class="body">
+    
+    <h1 class="text">Welcome to the wonderful world of magic!</h1>
+    <p class="text" id="info">Ask your question below and be sure to concentrate hard on the question. The magic 8 ball will reach forward in time and reveal the truth to you.</p>
+    
+    <textarea class="question">Enter your question here!</textarea>
+    
+    <div class="button text">Submit!</div>
+    <div class="container">
+        <div class="pulse5">
+            <div class="pulse4">
+                <div class="pulse3">
+                    <div class="pulse2">
+                        <div class="pulse1">
+                            <div class="blackBall">
+                                <h1 class="text">Magic 8 Ball</h1>
+                                <div class="answerZone">
+                                    <p class= "answerText" id="answer"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        
+        var answerNumb = ""
+        var eightBall = ""
+        
+      $(".button").hover(function() {
+          $(this).addClass("highlighted");
+          
+      }, function() {
+          $(this).removeClass("highlighted");
+          
+      })
+        
+       $(".button").click(answerQuestion)
+      
+    function answerQuestion() {
+        answerNumb = Math.floor(Math.random() * 10)
+        
+        if (answerNumb === 0) {
+            eightBall = "It is certain.";
+        } else if (answerNumb === 1) {
+            eightBall = "It is not clear.";
+            
+        } else if (answerNumb === 2) {
+            eightBall = "There is no knowing";
+            
+        } else if (answerNumb === 3) {
+            eightBall = "It is most likely to be";
+            
+        } else if (answerNumb === 4) {
+            eightBall = "It is yet to be determined";
+            
+        } else if (answerNumb === 5) {
+            eightBall = "There is no answer yet";
+            
+        } else if (answerNumb === 6) {
+            eightBall = "It will come to be";
+            
+        } else if (answerNumb === 7) {
+            eightBall = "It will never be true";
+            
+        } else if (answerNumb === 8) {
+            eightBall = "We may never know";
+            
+        } else if (answerNumb === 9) {
+            eightBall = "Try again later";
+            
+        } else if (answerNumb === 10) {
+            eightBall = "How did you manage this? You control the universe and any wish of your's will come to be.";
+            
+        }
+        
+        $("#answer").html(eightBall)
+    }
+    
+    
+    </script>
+</body>
+</html>
